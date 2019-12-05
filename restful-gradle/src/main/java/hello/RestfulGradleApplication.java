@@ -9,7 +9,7 @@ public class RestfulGradleApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(RestfulGradleApplication.class, args);
 	}
-
+	//http://localhost:8080/greeting?name=User
 }
 
 /*
