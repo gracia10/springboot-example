@@ -36,7 +36,7 @@ fruit:
       colorname: red
 
 ---
-spring:  profiles:    active: real
+spring:  profiles:    active: real
 # ** application.properties가 있어도 .yml만 오버라이드되어 적용된다.
 
   

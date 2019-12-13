@@ -1,0 +1,40 @@
+package com.example;
+
+import static org.assertj.core.api.Assertions.assertThat;
+
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.json.JsonTest;
+import org.springframework.boot.test.json.JacksonTester;
+import org.springframework.test.context.junit4.SpringRunner;
+
+import com.example.domain.Book;
+
+@RunWith(SpringRunner.class)
+@JsonTest
+public class BookJsonTest {
+
+    @Autowired
+    private JacksonTester<Book> json;
+
+    @Test
+    public void json_테스트() throws Exception {
+        Book book = Book.builder()
+                .title("테스트")
+                .build();
+
+        String content = "{\"title\":\"테스트\"}";
+        assertThat(this.json.parseObject(content).getTitle()).isEqualTo(book.getTitle());
+        assertThat(this.json.parseObject(content).getPublishedAt()).isNull();
+
+        assertThat(this.json.write(book)).isEqualToJson("/test.json");
+        assertThat(this.json.write(book)).hasJsonPathStringValue("title");
+        assertThat(this.json.write(book)).extractingJsonPathStringValue("title").isEqualTo("테스트");
+    }
+}
+
+/* @JsonTest
+ * Gson, Jackson API (JSON 직렬화, 역직렬화 지원)  제공 
+ * 
+ */
