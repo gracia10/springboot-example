@@ -44,3 +44,49 @@ spring:  profiles:    active: real
 # 방법1) 한 개의 .yml에 --- 구분자로 나눈다.
 # 방법2) application-{profiles name}.yml 만든다.
 # spring.profiles.active={profiles name} 지정한다.
+
+server:
+  port: 8080
+---
+spring:  profiles: local
+server:
+  port: 9090
+---
+spring:
+  profiles: dev
+server:
+  port: 9091
+---
+spring:
+  profiles: real
+  datasource:    url: jdbc:h2:mem:testdb
+  h2:    console:      enabled: true
+server:
+  port: 9092
+  
+property:
+  test:
+    name: property depth test
+propertyTest: test
+propertyTestList: a,b,c
+
+fruit:
+  list:
+    - name : banana1
+      color-name: yellow
+    - name : banana2
+      color_name: green
+    - name : banana3
+      colorName: blue
+    - name : banana4
+      colorname: red
+
+---
+spring:  profiles:    active: real
+# ** application.properties가 있어도 .yml만 오버라이드되어 적용된다.
+
+  
+# ** profiles 환경구분
+# 방법1) 한 개의 .yml에 --- 구분자로 나눈다.
+# 방법2) application-{profiles name}.yml 만든다.
+# spring.profiles.active={profiles name} 지정한다.
