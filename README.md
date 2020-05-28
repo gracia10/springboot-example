@@ -2,9 +2,6 @@
 https://spring.io/projects/spring-boot
 
 
-
-#필기  
-
 :: Github branch 종류  
 
 master  배포목적. 배포가능 상태만 관리   
