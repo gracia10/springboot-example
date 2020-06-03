@@ -23,5 +23,5 @@ if spring-webmvc is on the classpath, this annotation flags the application
 as a web application and activates key behaviors, such as setting up a DispatcherServlet.
   
 ### @ComponentScan:  
-Spring에게 현재 패키지 스캔지시. look for other components, configurations,
-and services in the hello package, letting it find the controllers.
+Spring에게 현재 패키지 스캔지시.  
+look for other components, configurations, and services in the hello package, letting it find the controllers.  
