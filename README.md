@@ -18,8 +18,8 @@ class를 application context의 Bean 정의 소스로 태그합니다.
  
 ### @EnableAutoConfiguration:  
 Tells Spring Boot to start adding beans based on
-classpath settings, other beans, and various property settings. For example,
-if spring-webmvc is on the classpath, this annotation flags the application
+classpath settings, other beans, and various property settings.  
+For example, if spring-webmvc is on the classpath, this annotation flags the application
 as a web application and activates key behaviors, such as setting up a DispatcherServlet.
   
 ### @ComponentScan:  
