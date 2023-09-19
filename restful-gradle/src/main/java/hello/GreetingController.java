@@ -17,7 +17,3 @@ public class GreetingController {
 							String.format(template, name));
 	}
 }
-// The Greeting object must be converted to JSON. 
-
-// ** @RequestMapping(method=GET) 
-// ** @RequestParam  --- value  === parameter name
